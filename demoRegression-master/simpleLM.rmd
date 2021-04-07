@@ -18,7 +18,7 @@ bears <- read.csv(file="BEARS.csv",header = TRUE)
 ```
 
 # NECK
-## Model LENGTH ~ NECK  this is an example  
+## Model LENGTH ~ NECK   
 
 ```{r}
 simp <- lm(LENGTH~NECK,data=bears)
@@ -91,6 +91,8 @@ summary.lm(simpCT)
 new <- data.frame(CHEST=bears$CHEST [c(5, 15, 23)])
 predict(simpCT,new,se.fit=TRUE)
 ```
+
+# CONCLUSIONS
 
 The best model was based on HEADLEN as seen by the adjusted R-Squared the prediction of the length for bears 5, 15, and 23 is:
 
