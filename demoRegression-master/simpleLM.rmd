@@ -11,7 +11,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## make a simple regression model
+Set up regression models
 
 ```{r}
 bears <- read.csv(file="BEARS.csv",header = TRUE)
@@ -92,6 +92,15 @@ new <- data.frame(CHEST=bears$CHEST [c(5, 15, 23)])
 predict(simpCT,new,se.fit=TRUE)
 ```
 
+The best model was based on HEADLEN as seen by the adjusted R-Squared the prediction of the length for bears 5, 15, and 23 is:
 
-## Surely there is another variable that can better predict LENGTH than NECK. Find one and compare its performance to that of neck by it value of Adjusted-Rsquared (bigger is better).
+70.31,  51.94, 58.83
+
+
+The actual lengths of the bears were
+
+`r bears$LENGTH[c(5, 15, 23)]` 
+
+The error in prediction for bear number 5 was about 8 inches, for bear number 15, the prediction is right on, and for bear number 23, the error in the prediction was just under 6 inches.
+
 
